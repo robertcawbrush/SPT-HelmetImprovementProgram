@@ -1,0 +1,12 @@
+{
+  "debug": false,
+  "debugMagazineScanLog": false,
+  "loadUnloadModifier": 0,
+  "checkTimeModifier": 10,
+  "magazinesToIgnore": [
+    "ItemIdHere",
+    "IfYourMagazineIsAVanillaTarkovItemUseThisSite{https://db.sp-tarkov.com/}",
+    "OtherwiseYouWillEitherNeedToBuyItFromTheStoreAndLookAtTheRunningServerLog",
+    "OrReadTheCodeOfTheModYouAreUsing"
+  ]
+}

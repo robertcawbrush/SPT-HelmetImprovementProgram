@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+
+# ignore the build file
+src/mod.js
