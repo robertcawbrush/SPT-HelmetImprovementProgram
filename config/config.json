@@ -1,12 +1,16 @@
 {
   "debug": false,
-  "debugMagazineScanLog": false,
-  "loadUnloadModifier": 0,
-  "checkTimeModifier": 10,
-  "magazinesToIgnore": [
+  "debugHelmetScanLog": false,
+  "blocksEarWear": false,
+  "deafnessStrengthBasedOnArmorType": false,
+  "deafnessStrength": "None",
+  "deafnessStrengthPossibleValues": "None, Low, High",
+  "deafnessStrengthExplanation": "if deafnessStrengthBasedOnArmorType is true then this value is not used",
+  "deafnessStrengthExplanation2": "If deafnessStrengthBasedOnArmorType is false then it will apply this value to everything",
+  "helmetsToIgnore": [
     "ItemIdHere",
-    "IfYourMagazineIsAVanillaTarkovItemUseThisSite{https://db.sp-tarkov.com/}",
-    "OtherwiseYouWillEitherNeedToBuyItFromTheStoreAndLookAtTheRunningServerLog",
-    "OrReadTheCodeOfTheModYouAreUsing"
+    "If Your Helmet Is A Vanilla Tarkov Item Use This Site { https://db.sp-tarkov.com/ }",
+    "Otherwise You Will Either Need To Buy It From The Store And Look At The Running Server Log",
+    "Or Read The Code Of The Mod You Are Using"
   ]
 }
