@@ -11,8 +11,17 @@ const config: IConfig = require("../config/config.json");
 
 type ItemIds = string[]
 
-const HEAD_ARMORZONE: string = 'Head'
-
+const HELMET_TOP:string = 'Helmet_top'
+const HELMET_BACK:string = 'Helmet_back'
+const HELMET_EARS:string = 'Helmet_ears'
+const HELMET_ZONES_LIST = {
+    [HELMET_TOP]: HELMET_TOP,
+    [HELMET_BACK]: HELMET_BACK,
+    [HELMET_EARS]: HELMET_EARS,
+}
+const ARMOR_TYPE_LIGHT = 'Light'
+const ARMOR_TYPE_MEDIUM = 'Medium'
+const ARMOR_TYPE_HEAVY = 'Heavy'
 const MODTITLE: string = "[Helmet Improvement Program]"
 
 class HelmetImprovementProgram implements IPostDBLoadMod {
@@ -40,6 +49,27 @@ class HelmetImprovementProgram implements IPostDBLoadMod {
 
         logger.info(`${MODTITLE} applying changes`);
 
+        const isArmorType = (armorType: string): boolean => {
+           switch(armorType) {
+               case ARMOR_TYPE_LIGHT:
+               case ARMOR_TYPE_MEDIUM:
+               case ARMOR_TYPE_HEAVY:
+                   return true;
+               default:
+                   return false;
+           }
+        }
+        const isHelmetName = (armorType: string): boolean => {
+            switch(armorType) {
+                case HELMET_TOP:
+                case HELMET_BACK:
+                case HELMET_EARS:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         config.debug && logger.info(`${MODTITLE} starting database scan for helmets`)
         config.debug && logger.info(`${MODTITLE} deafnessStrength is set to ${deafnessStrengthValue}, blocksEarWear modifier is set to ${blocksEarWearValue}`)
         if (deafnessStrengthBasedOnArmorTypeValue && config.debug) {
@@ -55,14 +85,14 @@ class HelmetImprovementProgram implements IPostDBLoadMod {
                 continue;
             }
 
-            // Check armorZone, if the first entry is 'Head' then I assume it is a helmet
-            const itemArmorZoneArr = currentItem?._props.armorZone
-            let itemArmorZone = undefined
-            if (itemArmorZoneArr !== undefined && itemArmorZoneArr.length > 0) {
-                itemArmorZone = itemArmorZoneArr[0]
+            // look at armorType, if exists then check if helm
+            if (currentItem?.ArmorType === null && !isArmorType(currentItem?.ArmorType)) {
+                continue;
             }
 
-            if (itemArmorZone !== undefined && itemArmorZone === HEAD_ARMORZONE) {
+            // look in _props.Slots map through
+            const isItemHelmet = currentItem?._props?.Slots?.find(ci => HELMET_ZONES_LIST[ci._name] !== undefined)
+            if (isItemHelmet) {
                 const itemId = item._id
                 if (checkIfInBannedList(itemId, helmetsToIgnoreValue)) {
                     config.debug && logger.info(`${MODTITLE} item of id: ${item._id} is in ban list and its stats will not be changed`)
