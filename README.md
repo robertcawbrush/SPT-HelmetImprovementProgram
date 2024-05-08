@@ -30,22 +30,22 @@ in the server log you will see lines starting with "[Helmet Improvement Program]
 
 
 
-{
-  "debug": false,
-  "debugHelmetScanLog": false,
-  "blocksEarWear": false,
-  "deafnessStrengthBasedOnArmorType": false,
-  "deafnessStrength": "None",
-  "deafnessStrengthPossibleValues": "None, Low, High",
-  "deafnessStrengthExplanation": "if deafnessStrengthBasedOnArmorType is true then this value is not used",
-  "deafnessStrengthExplanation2": "If deafnessStrengthBasedOnArmorType is false then it will apply this value to everything",
-  "helmetsToIgnore": [
-    "ItemIdHere",
-    "If Your Helmet Is A Vanilla Tarkov Item Use This Site { https://db.sp-tarkov.com/ }",
-    "Otherwise You Will Either Need To Buy It From The Store And Look At The Running Server Log",
-    "Or Read The Code Of The Mod You Are Using"
-  ]
-}
+    {
+    "debug": false,
+    "debugHelmetScanLog": false,
+    "blocksEarWear": false,
+    "deafnessStrengthBasedOnArmorType": false,
+    "deafnessStrength": "None",
+    "deafnessStrengthPossibleValues": "None, Low, High",
+    "deafnessStrengthExplanation": "if deafnessStrengthBasedOnArmorType is true then this value is not used",
+    "deafnessStrengthExplanation2": "If deafnessStrengthBasedOnArmorType is false then it will apply this value to everything",
+    "helmetsToIgnore": [
+        "ItemIdHere",
+        "If Your Helmet Is A Vanilla Tarkov Item Use This Site { https://db.sp-tarkov.com/ }",
+        "Otherwise You Will Either Need To Buy It From The Store And Look At The Running Server Log",
+        "Or Read The Code Of The Mod You Are Using"
+      ]
+    }
 
 
 # debug
@@ -84,18 +84,20 @@ this is a list of the helmets in which you intend for their debuffs to remain. Y
 
 
 
-...
-"CCG_APC": {      
-    "_id": "CCG_APC",
-    "_name": "CCG_APC",
-... ,
-"locales": {
-            "en": {
-                "Name": "PARACLETE APC",
-                "ShortName": "APC",
-                "Description": "Designed to allow the operator to gain immediate protection against high powered assault weapons, the Advanced Plate Carrier (APC) takes performance to new levels. Blending the functionality of a tactical vest with the simplicity of a plate carrier, the APC accommodates soft ballistic panels, Level III or IV hard armor plates and equipment pouches."
+    ...
+    "CCG_APC": {      
+      "_id": "CCG_APC",
+      "_name": "CCG_APC",
+    ... ,
+    "locales": {
+              "en": {
+                  "Name": "PARACLETE APC",
+                  "ShortName": "APC",
+                  "Description": "Designed to allow the operator to gain immediate protection against high powered assault weapons, 
+                  the Advanced Plate Carrier (APC) takes performance to new levels. Blending the functionality of a tactical vest with the
+                  simplicity of a plate carrier, the APC accommodates soft ballistic panels, Level III or IV hard armor plates and equipment pouches."
             }
-}
+    }
 
 
 
