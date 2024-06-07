@@ -1,3 +1,5 @@
+Hey folks, a mod shadow banned me for an AI image using the colors yellow and blue (wasnt the ukrainian flag) and when i asked about it he banned me so I don't develop for SPT anymore. If you are wondering when this will support 3.9 the answer is never.
+
 # What
 
 This mod adds the ability for helmets that block using ear protection to now use ear protection as well as lowers the deafness rating if you are not using ear pro. It does this by first scanning the database, then programmatically setting the debuffs to whatever the config is.
